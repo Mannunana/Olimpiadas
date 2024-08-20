@@ -1,0 +1,9 @@
+CREATE TABLE carrito (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    usuario_id INT(11) NOT NULL,
+    producto_id INT(11) NOT NULL,
+    cantidad INT(11) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
